@@ -7,6 +7,17 @@ public class Liga {
     private ArrayList<Equipo> equipos = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
+    private Equipo buscarEquipo(String nombre){
+        Equipo equipoEncontrado = null;
+        int contador = 0;
+        while (equipoEncontrado != null && contador < equipos.size()) {
+            if (equipos.get(contador).getNombre().equals(nombre)) {
+                equipoEncontrado = equipos.get(contador);
+            }
+            contador++;
+        }
+        return equipoEncontrado;
+    }
     
     public void altaEquipo(){
         System.out.println("***************************");
@@ -17,14 +28,7 @@ public class Liga {
         System.out.println("Ciudad equipo");
         String ciudad = scanner.nextLine();
 
-        Equipo equipoEncontrado = null;
-        int contador = 0;
-        while (equipoEncontrado != null && contador < equipos.size()) {
-            if (equipos.get(contador).getNombre().equals(nombre)) {
-                equipoEncontrado = equipos.get(contador);
-            }
-            contador++;
-        }
+        Equipo equipoEncontrado = buscarEquipo(nombre);
 
         if (equipoEncontrado == null) {
             Equipo equipo = new Equipo(nombre, ciudad);
@@ -32,6 +36,23 @@ public class Liga {
         }
         else{
             System.out.println("Ese equipo ya existe.");
+        }
+    }
+
+    public void bajaEquipo(){
+        System.out.println("***************************");
+        System.out.println("******* Baja Equipo *******");
+        System.out.println("***************************");
+        System.out.println("Nombre equipo: ");
+        String nombre = scanner.nextLine();
+
+        Equipo equipoEncontrado = buscarEquipo(nombre);
+
+        if (equipoEncontrado != null) {
+            equipos.remove(equipoEncontrado);            
+        }
+        else{
+            System.out.println("Ese equipo no existe.");
         }
     }
 }

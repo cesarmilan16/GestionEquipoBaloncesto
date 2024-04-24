@@ -39,10 +39,10 @@ public class App {
                 liga.gestionEquipo();
                 break;
             case "4":
-                liga.listaJugadores();
+                liga.listarJugadores();
                 break;
             case "5":
-                liga.listaEntrenadores();
+                liga.listarEntrenadores();
                 break;
             case "9":
                 salir = true;

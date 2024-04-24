@@ -8,4 +8,13 @@ public class Entrenador extends Persona{
         super(nombre, apellido);
         this.anioLicencia = anioLicencia;
     }
+
+    public int getAnioLicencia(){
+        return anioLicencia;
+    }
+
+    public void escribirDatos(){
+        super.escribirDatos();
+        System.out.println("Año licencia: " + anioLicencia);
+    }
 }

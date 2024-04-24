@@ -22,6 +22,10 @@ public class Equipo {
         return nombre;
     }
 
+    public Entrenador getEntrenador(){
+        return entrenador;
+    }
+
     public void gestionEquipo(){
         boolean salir = false;
         while (!salir) {

@@ -1,6 +1,8 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Liga {
@@ -73,9 +75,23 @@ public class Liga {
         }
     }
 
-    public void listaJugadores(){
+    public void listarJugadores(){
         for (Equipo equipo : equipos){
             equipo.datosJugadorMalAlto();
+        }
+    }
+
+    public void listarEntrenadores(){
+        ArrayList<Entrenador> entrenadores = new ArrayList<>();
+
+        for (Equipo equipo : equipos){
+            entrenadores.add(equipo.getEntrenador());
+        }
+
+        Collections.sort(entrenadores, Comparator.comparingInt(entrenador -> entrenador.getAnioLicencia()));
+
+        for (Entrenador entrenador : entrenadores){
+            entrenador.escribirDatos();
         }
     }
 }

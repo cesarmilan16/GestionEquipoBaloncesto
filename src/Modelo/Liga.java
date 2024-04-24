@@ -55,4 +55,21 @@ public class Liga {
             System.out.println("Ese equipo no existe.");
         }
     }
+
+    public void gestionEquipo(){
+        System.out.println("***************************");
+        System.out.println("******* Gestión Equipo *******");
+        System.out.println("***************************");
+        System.out.println("Nombre equipo: ");
+        String nombre = scanner.nextLine();
+
+        Equipo equipoEncontrado = buscarEquipo(nombre);
+
+        if (equipoEncontrado != null) {
+            equipoEncontrado.gestionEquipo();            
+        }
+        else{
+            System.out.println("Ese equipo no existe.");
+        }
+    }
 }

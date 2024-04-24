@@ -2,6 +2,17 @@ package Modelo;
 
 public class Jugador extends Persona{
     private int dorsal;
-    private float peso;
-    private float altura;
+    private double peso;
+    private double altura;
+
+    public Jugador (String nombre, String apellido, int dorsal, double peso, double altura){
+        super(nombre, apellido);
+        this.dorsal = dorsal;
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    public int getDorsal(){
+        return dorsal;
+    }
 }

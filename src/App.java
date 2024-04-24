@@ -35,9 +35,6 @@ public class App {
             case "2":
                 liga.bajaEquipo();
                 break;
-            case "2":
-                liga.bajaEquipo();
-                break;
             case "3":
                 liga.gestionEquipo();
                 break;

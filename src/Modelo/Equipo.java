@@ -18,7 +18,6 @@ public class Equipo {
         this.ciudad = ciudad;
         plantilla = new ArrayList<>();
         entrenador = null;
-        ciudad = null;
     }
 
     public String getNombre(){

@@ -126,4 +126,24 @@ public class Equipo {
             plantilla.remove(jugadorEncontrado);
         }
     }
+
+    public void datosJugadorMalAlto(){
+        Jugador jugadorMasAltoPorAhora = null;
+        for (Jugador jugador : plantilla){
+            if (jugadorMasAltoPorAhora== null) {
+                jugador = jugadorMasAltoPorAhora;
+            }
+            else{
+                if (jugadorMasAltoPorAhora.getAltura() < jugador.getAltura()) {
+                    jugadorMasAltoPorAhora = jugador;
+                }
+            }
+        }
+        if (jugadorMasAltoPorAhora == null) {
+            System.out.println("El equipo " + nombre + "no tiene jugadores inscritos");
+        }
+        else{
+            jugadorMasAltoPorAhora.escribirDatos();
+        }
+    }
 }

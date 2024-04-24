@@ -9,4 +9,8 @@ public class Persona {
         this.apellido = apellido;
     }
 
+    protected void escribirDatos(){
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Apellido: " + apellido);
+    }
 }

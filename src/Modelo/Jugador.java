@@ -15,4 +15,15 @@ public class Jugador extends Persona{
     public int getDorsal(){
         return dorsal;
     }
+
+    public double getAltura(){
+        return altura;
+    }
+
+    public void escribirDatos(){
+        super.escribirDatos();
+        System.out.println("Dorsal: " + dorsal);
+        System.out.println("Altura: " + altura);
+        System.out.println("Peso: " + peso);
+    }
 }

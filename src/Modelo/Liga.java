@@ -72,4 +72,10 @@ public class Liga {
             System.out.println("Ese equipo no existe.");
         }
     }
+
+    public void listaJugadores(){
+        for (Equipo equipo : equipos){
+            equipo.datosJugadorMalAlto();
+        }
+    }
 }

@@ -12,7 +12,7 @@ public class Liga {
     private Equipo buscarEquipo(String nombre){
         Equipo equipoEncontrado = null;
         int contador = 0;
-        while (equipoEncontrado != null && contador < equipos.size()) {
+        while (equipoEncontrado == null && contador < equipos.size()) {
             if (equipos.get(contador).getNombre().equals(nombre)) {
                 equipoEncontrado = equipos.get(contador);
             }

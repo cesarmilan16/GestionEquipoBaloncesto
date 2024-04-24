@@ -16,6 +16,9 @@ public class Equipo {
     public Equipo(String nombre, String ciudad){
         this.nombre = nombre;
         this.ciudad = ciudad;
+        plantilla = new ArrayList<>();
+        entrenador = null;
+        ciudad = null;
     }
 
     public String getNombre(){
@@ -84,7 +87,7 @@ public class Equipo {
     private Jugador buscarJugador(int dorsal){
         Jugador jugadorEncontrado = null;
         int contador = 0;
-        while (jugadorEncontrado != null && contador < plantilla.size()) {
+        while (jugadorEncontrado == null && contador < plantilla.size()) {
             if (plantilla.get(contador).getDorsal() == dorsal) {
                 jugadorEncontrado = plantilla.get(contador);
             }
@@ -135,7 +138,7 @@ public class Equipo {
         Jugador jugadorMasAltoPorAhora = null;
         for (Jugador jugador : plantilla){
             if (jugadorMasAltoPorAhora== null) {
-                jugador = jugadorMasAltoPorAhora;
+                jugadorMasAltoPorAhora = jugador;
             }
             else{
                 if (jugadorMasAltoPorAhora.getAltura() < jugador.getAltura()) {

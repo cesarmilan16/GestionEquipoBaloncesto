@@ -76,8 +76,13 @@ public class Liga {
     }
 
     public void listarJugadores(){
-        for (Equipo equipo : equipos){
-            equipo.datosJugadorMalAlto();
+        if (equipos.isEmpty()) {
+            System.out.println("No hay ningún equipo dado de alta");
+        }
+        else{
+            for (Equipo equipo : equipos){
+                equipo.datosJugadorMalAlto();
+            }
         }
     }
 

@@ -146,7 +146,7 @@ public class Equipo {
             }
         }
         if (jugadorMasAltoPorAhora == null) {
-            System.out.println("El equipo " + nombre + "no tiene jugadores inscritos");
+            System.out.println("El equipo " + nombre + " no tiene jugadores inscritos");
         }
         else{
             jugadorMasAltoPorAhora.escribirDatos();

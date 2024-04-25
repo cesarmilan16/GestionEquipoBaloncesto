@@ -25,6 +25,7 @@ public class App {
         System.out.println("5.- Lista ordenada de entrenadores");
         System.out.println("9.- Salir");
         
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         String opcion = scanner.nextLine();
 

@@ -8,6 +8,7 @@ import Herramientas.Utilidades;
 public class Equipo {
     private Scanner scanner = new Scanner(System.in);
     private String nombre;
+    @SuppressWarnings("unused")
     private String ciudad;
     private Entrenador entrenador;
     private Jugador jugador;

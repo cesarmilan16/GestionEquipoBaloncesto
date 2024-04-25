@@ -81,17 +81,28 @@ public class Liga {
         }
     }
 
-    public void listarEntrenadores(){
-        ArrayList<Entrenador> entrenadores = new ArrayList<>();
-
-        for (Equipo equipo : equipos){
-            entrenadores.add(equipo.getEntrenador());
-        }
-
-        Collections.sort(entrenadores, Comparator.comparingInt(entrenador -> entrenador.getAnioLicencia()));
-
-        for (Entrenador entrenador : entrenadores){
-            entrenador.escribirDatos();
+    public void listarEntrenadores() {
+        try {
+            ArrayList<Entrenador> entrenadores = new ArrayList<>();
+    
+            for (Equipo equipo : equipos) {
+                entrenadores.add(equipo.getEntrenador());
+            }
+    
+            // Ordena los entrenadores por año de licencia
+            Collections.sort(entrenadores, Comparator.comparingInt(entrenador -> entrenador.getAnioLicencia()));
+    
+            // Imprime los detalles de cada entrenador
+            for (Entrenador entrenador : entrenadores) {
+                entrenador.escribirDatos();
+            }
+    
+            // Si no se agregan entrenadores, lanza una excepción
+            if (entrenadores.isEmpty()) {
+                throw new Exception("No se han agregado entrenadores.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }

@@ -13,12 +13,14 @@ public class Equipo {
     private Entrenador entrenador;
     private Jugador jugador;
     private ArrayList<Jugador> plantilla;
+    private ArrayList<Integer> puntos;
 
     public Equipo(String nombre, String ciudad){
         this.nombre = nombre;
         this.ciudad = ciudad;
         plantilla = new ArrayList<>();
         entrenador = null;
+        puntos = new ArrayList<>();
     }
 
     public String getNombre(){
@@ -152,5 +154,17 @@ public class Equipo {
         else{
             jugadorMasAltoPorAhora.escribirDatos();
         }
+    }
+
+    public void agregarPuntos(int puntuacion) {
+        puntos.add(puntuacion);
+    }
+
+    public int recuentoPuntos() {
+        int recuento = 0;
+        for (Integer punto : puntos) {
+            recuento += punto;
+        }
+        return recuento;
     }
 }

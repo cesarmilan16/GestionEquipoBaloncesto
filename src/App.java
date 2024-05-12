@@ -23,6 +23,9 @@ public class App {
         System.out.println("3.- Gestión equipo");
         System.out.println("4.- Lista de los jugadores más altos");
         System.out.println("5.- Lista ordenada de entrenadores");
+        System.out.println("6.- Introducir partido");
+        System.out.println("7.- Dar clasificación");
+        System.out.println("8.- Dar clasificación");
         System.out.println("9.- Salir");
         
         @SuppressWarnings("resource")
@@ -45,6 +48,14 @@ public class App {
             case "5":
                 liga.listarEntrenadores();
                 break;
+            case "6":
+                liga.meterPartido();
+                break;
+            case "7":
+                liga.clasificacion();
+                break;
+            case "8":
+                liga.imprimirPartidos();
             case "9":
                 salir = true;
                 break;

@@ -224,6 +224,7 @@ public class Liga {
         int i = 0;
         for (Equipo equipo : equipos) {
             i += 1;
+            System.out.println("------------------------------");
             System.out.println("Equipo " + i + ":");
             System.out.println("Nombre equipo: " + equipo.getNombre());
             System.out.println("Total puntos: " + equipo.recuentoPuntos());

@@ -194,7 +194,7 @@ public class Liga {
             }
             // Si tiene mas puntuación el visitante se le sumará 3 puntos
             else if (partido.getPuntuacionLocal() < partido.getPuntuacionVisitante()) {
-                equipoVisitante.agregarPuntos(3);;
+                equipoVisitante.agregarPuntos(3);
             }
             // Si queda empate sumarán 1 ambos
             else {

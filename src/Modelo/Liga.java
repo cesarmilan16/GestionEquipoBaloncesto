@@ -162,10 +162,11 @@ public class Liga {
         String nombreLocal = scanner.nextLine();
         // Buscamos el equipo local
         Equipo equipoLocal = buscarEquipo(nombreLocal);
-        // Si no se encuenta el equipo local...
+        // Si no se encuenta el equipo local nos mostrará el siguiente mensaje
         if (equipoLocal == null) {
             System.out.println("Equipo local no disponible");
         }
+        // Si se encuentra seguimos con el código
         else {
             // Introducimos el equipo visitante
             System.out.println("Nombre equipo visitante: ");
@@ -173,14 +174,15 @@ public class Liga {
 
             // Buscamos el equipo visitante
             Equipo equipoVisitante = buscarEquipo(nombreVisitante);
-            // Si no se encuantra el equipo visitante...
+            // Si no se encuantra el equipo visitante nos mostrará el siguiente mensaje
             if (equipoVisitante == null) {
                 System.out.println("Equipo visitante no disponible");
             }
+            // Si son el mismo equipo nos saltará el siguiente mensaje
             else if (equipoLocal.equals(equipoVisitante)) {
                 System.out.println("El equipo local es el mismo que el visitante");
             }
-            // Si se encuentran los dos
+            // Si se encuentran los dos y son diferentes equipos de la liga continuamos con el código
             else {
                 // Metemos las puntuaciones de ambos equipos
                 int puntuacionLocal = Utilidades.leerEntero(" puntos del equipo Local");

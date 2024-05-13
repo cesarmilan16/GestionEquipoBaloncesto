@@ -160,49 +160,55 @@ public class Liga {
         // Introducimos el equipo local
         System.out.println("Nombre equipo local: ");
         String nombreLocal = scanner.nextLine();
-        // Introducimos el equipo visitante
-        System.out.println("Nombre equipo visitante: ");
-        String nombreVisitante = scanner.nextLine();
-
-        // Los buscamos a los dos
+        // Buscamos el equipo local
         Equipo equipoLocal = buscarEquipo(nombreLocal);
         // Si no se encuenta el equipo local...
         if (equipoLocal == null) {
             System.out.println("Equipo local no disponible");
         }
-        Equipo equipoVisitante = buscarEquipo(nombreVisitante);
-        // Si no se encuantra el equipo visitante...
-        if (equipoVisitante == null && equipoLocal.equals(equipoVisitante)) {
-            System.out.println("Equipo visitante no disponible");
-        }
-        // Si se encuentran los dos
         else {
-            // Metemos las puntuaciones de ambos equipos
-            int puntuacionLocal = Utilidades.leerEntero(" puntos del equipo Local");
-            int puntuacionVisitante = Utilidades.leerEntero(" puntos del equipo Visitante");
+            // Introducimos el equipo visitante
+            System.out.println("Nombre equipo visitante: ");
+            String nombreVisitante = scanner.nextLine();
 
-            // Introducimos la fecha del partido
-            Date fechaPartido = introducirFecha();
-
-            // Creamos la instancia del partido
-            Partido partido = new Partido(fechaPartido, puntuacionLocal, puntuacionVisitante, equipoLocal, equipoVisitante);
-            partidos.add(partido);
-
-            // Si tiene mas puntuación el local se le sumará 3 puntos
-            if (partido.getPuntuacionLocal() > partido.getPuntuacionVisitante()) {
-                equipoLocal.agregarPuntos(3);;
+            // Buscamos el equipo visitante
+            Equipo equipoVisitante = buscarEquipo(nombreVisitante);
+            // Si no se encuantra el equipo visitante...
+            if (equipoVisitante == null) {
+                System.out.println("Equipo visitante no disponible");
             }
-            // Si tiene mas puntuación el visitante se le sumará 3 puntos
-            else if (partido.getPuntuacionLocal() < partido.getPuntuacionVisitante()) {
-                equipoVisitante.agregarPuntos(3);
+            else if (equipoLocal.equals(equipoVisitante)) {
+                System.out.println("El equipo local es el mismo que el visitante");
             }
-            // Si queda empate sumarán 1 ambos
+            // Si se encuentran los dos
             else {
-                equipoLocal.agregarPuntos(1);
-                equipoVisitante.agregarPuntos(1);
+                // Metemos las puntuaciones de ambos equipos
+                int puntuacionLocal = Utilidades.leerEntero(" puntos del equipo Local");
+                int puntuacionVisitante = Utilidades.leerEntero(" puntos del equipo Visitante");
+
+                // Introducimos la fecha del partido
+                Date fechaPartido = introducirFecha();
+
+                // Creamos la instancia del partido
+                Partido partido = new Partido(fechaPartido, puntuacionLocal, puntuacionVisitante, equipoLocal, equipoVisitante);
+                partidos.add(partido);
+
+                // Si tiene mas puntuación el local se le sumará 3 puntos
+                if (partido.getPuntuacionLocal() > partido.getPuntuacionVisitante()) {
+                    equipoLocal.agregarPuntos(3);;
+                }
+                // Si tiene mas puntuación el visitante se le sumará 3 puntos
+                else if (partido.getPuntuacionLocal() < partido.getPuntuacionVisitante()) {
+                    equipoVisitante.agregarPuntos(3);
+                }
+                // Si queda empate sumarán 1 ambos
+                else {
+                    equipoLocal.agregarPuntos(1);
+                    equipoVisitante.agregarPuntos(1);
+                }
+                // Imprimimos todos los datos del partido
+                partido.imprimirPartido();
             }
-            // Imprimimos todos los datos del partido
-            partido.imprimirPartido();
         }
     }
 

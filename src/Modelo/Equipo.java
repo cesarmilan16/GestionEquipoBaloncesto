@@ -8,7 +8,6 @@ import Herramientas.Utilidades;
 public class Equipo {
     private Scanner scanner = new Scanner(System.in);
     private String nombre;
-    @SuppressWarnings("unused")
     private String ciudad;
     private Entrenador entrenador;
     private Jugador jugador;
@@ -23,22 +22,26 @@ public class Equipo {
         puntos = new ArrayList<>();
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
 
-    public Entrenador getEntrenador(){
+    public Entrenador getEntrenador() {
         return entrenador;
     }
 
-    public void gestionEquipo(){
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void gestionEquipo() {
         boolean salir = false;
         while (!salir) {
             salir = mostraMenuGestionEquipo();
         }
     }
 
-    private boolean mostraMenuGestionEquipo(){
+    private boolean mostraMenuGestionEquipo() {
         boolean salir = false;
         System.out.println("*****************************");
         System.out.println("**** Menu gestión equipo ****");
@@ -73,7 +76,7 @@ public class Equipo {
         return salir;
     }
 
-    private void altaEntrenador(){
+    private void altaEntrenador() {
         System.out.println("***************************");
         System.out.println("***** Alta Entrenador *****");
         System.out.println("***************************");
@@ -86,7 +89,7 @@ public class Equipo {
         entrenador = new Entrenador(nombre, apellido, anioLicencia);
     }
 
-    private Jugador buscarJugador(int dorsal){
+    private Jugador buscarJugador(int dorsal) {
         Jugador jugadorEncontrado = null;
         int contador = 0;
         while (jugadorEncontrado == null && contador < plantilla.size()) {
@@ -98,7 +101,7 @@ public class Equipo {
         return jugadorEncontrado;
     }
 
-    private void altaJugador(){
+    private void altaJugador() {
         System.out.println("***************************");
         System.out.println("******* Alta Jugador ******");
         System.out.println("***************************");
@@ -121,7 +124,7 @@ public class Equipo {
         }
     }
 
-    private void bajaJugador(){
+    private void bajaJugador() {
         System.out.println("***************************");
         System.out.println("******* Baja Jugador ******");
         System.out.println("***************************");
@@ -136,7 +139,7 @@ public class Equipo {
         }
     }
 
-    public void datosJugadorMalAlto(){
+    public void datosJugadorMalAlto() {
         Jugador jugadorMasAltoPorAhora = null;
         for (Jugador jugador : plantilla){
             if (jugadorMasAltoPorAhora== null) {

@@ -13,7 +13,7 @@ public class App {
     }
 
 
-    private static boolean mostraMenuPrincipal(){
+    private static boolean mostraMenuPrincipal() {
         boolean salir = false;
         System.out.println("*****************************");
         System.out.println("*******Menu principal********");
@@ -28,7 +28,7 @@ public class App {
         System.out.println("8.- Dar clasificación");
         System.out.println("9.- Salir");
         
-        @SuppressWarnings("resource")
+
         Scanner scanner = new Scanner(System.in);
         String opcion = scanner.nextLine();
 
@@ -57,6 +57,7 @@ public class App {
             case "8":
                 liga.imprimirPartidos();
             case "9":
+                scanner.close();
                 salir = true;
                 break;
             default:

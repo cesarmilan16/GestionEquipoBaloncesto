@@ -25,7 +25,7 @@ public class App {
         System.out.println("5.- Lista ordenada de entrenadores");
         System.out.println("6.- Introducir partido");
         System.out.println("7.- Dar clasificación");
-        System.out.println("8.- Dar clasificación");
+        System.out.println("8.- Mostrar partidos");
         System.out.println("9.- Salir");
         
 
